@@ -1,0 +1,26 @@
+# wrangler.toml for Deploy to Cloudflare button:
+# https://developers.cloudflare.com/workers/platform/deploy-buttons/
+
+name = "zurg"
+main = "src/worker.ts"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+preview_urls = false  # Disable versioned preview URLs
+
+[triggers]
+crons = ["0 */1 * * *"]  # hourly cron triggers for cache refreshes
+
+[vars]
+RD_TOKEN = ""
+USERNAME = ""
+PASSWORD = ""
+API_ACCOUNT_ID = ""  # auto-populated during deployment
+REFRESH_INTERVAL_SECONDS = "15"
+API_TIMEOUT_SECONDS = "30"
+TORRENTS_PAGE_SIZE = "1000"
+WORKER_NAME = "zurg-serverless"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "zurg"
+database_id = "fb8ed986-caa0-46d1-9b03-aac8aa07061c" # auto-populated during deployment

@@ -1,0 +1,27 @@
+{
+  "name": "zurg",
+  "version": "1.0.0",
+  "description": "A serverless Real Debrid WebDAV server with HTML file browser and .STRM file-based streaming, running as a Cloudflare Worker, using Cloudflare D1.",
+  "main": "src/worker.ts",
+  "scripts": {
+    "dev": "wrangler dev --config wrangler.local.toml",
+    "deploy": "npx wrangler deploy",
+    "deploy-local": "wrangler deploy --config wrangler.local.toml --env production",
+    "deploy-staging": "wrangler deploy --config wrangler.local.toml --env staging"
+  },
+  "keywords": [
+    "real-debrid",
+    "webdav",
+    "infuse",
+    "strm",
+    "cloudflare-workers",
+    "serverless"
+  ],
+  "author": "Zurg Serverless Community",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241022.0",
+    "typescript": "^5.3.0",
+    "wrangler": "^3.91.0"
+  }
+}
